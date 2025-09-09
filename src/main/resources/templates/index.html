@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inicio</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Inicio</h1>
+<p th:text="${msj}"></p>
+
+<br/>
+<div th:if="${pacientes != null and !pacientes.empty}">
+    <table border="1">
+        <tr>
+            <th>DNI</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Obra Social</th>
+        </tr>
+        <tr th:each="paciente : ${pacientes}">
+            <td th:text="${paciente.dni}">Mostrar Id</td>
+            <td th:text="${paciente.firstname}">Mostrar Nombre</td>
+            <td th:text="${paciente.lastname}">Mostrar Apellido</td>
+            <td th:text="${paciente.dob}">Fecha de Nacimiento</td>
+            <td th:text="${paciente.obrasocial}">Mostrar Obra Social</td>
+        </tr>
+    </table>
+</div>
+<div th:if="${pacientes == null or pacientes.empty}">
+    La lista de pacientes está vacía
+</div>
+
+</body>
+
+</body>
+</html>
