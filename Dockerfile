@@ -1,4 +1,4 @@
 FROM openjdk:21
-COPY ./out/production/proyectounne/ /app
+COPY /home/carlos/Repos/UNNE/demo/src/main/java/com/app/demo/DemoApplication.java /app
 WORKDIR /app
 ENTRYPOINT ["java","DemoApplication"]
