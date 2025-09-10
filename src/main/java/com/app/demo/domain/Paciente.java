@@ -2,8 +2,11 @@ package com.app.demo.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Entity
@@ -18,6 +21,9 @@ public class Paciente implements Serializable {
     private int dni;
     private String firstname;
     private String lastname;
-    private String dob;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dob;
     private String obrasocial;
+    private String email;
+    private String phone;
 }

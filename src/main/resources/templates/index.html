@@ -9,6 +9,8 @@
 <p th:text="${msj}"></p>
 
 <br/>
+
+<a th:href="@{/create}">Agregar/Modificar paciente</a>
 <div th:if="${pacientes != null and !pacientes.empty}">
     <table border="1">
         <tr>
@@ -17,13 +19,20 @@
             <th>Apellido</th>
             <th>Fecha de Nacimiento</th>
             <th>Obra Social</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Editar</th>
         </tr>
         <tr th:each="paciente : ${pacientes}">
             <td th:text="${paciente.dni}">Mostrar Id</td>
             <td th:text="${paciente.firstname}">Mostrar Nombre</td>
             <td th:text="${paciente.lastname}">Mostrar Apellido</td>
-            <td th:text="${paciente.dob}">Fecha de Nacimiento</td>
+            <td th:text="${#dates.format(paciente.dob, 'dd/MM/yyyy')}">Fecha de Nacimiento</td>
             <td th:text="${paciente.obrasocial}">Mostrar Obra Social</td>
+            <td th:text="${paciente.email}">Mostrar Email</td>
+            <td th:text="${paciente.phone}">Mostrar Telefono</td>
+            <td> <a th:href="@{/update/} + ${paciente.id}" th:text="Editar"></td>
+            <td> <a th:href="@{/delete(id=${paciente.id})}" th:text="Eliminar"></td>
         </tr>
     </table>
 </div>

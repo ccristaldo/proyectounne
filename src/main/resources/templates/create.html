@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Inicio</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<h1>Crear/Modificar Datos de Paciente</h1>
+
+<a th:href="@{/}">Inicio</a>
+
+<br>
+
+<div>
+<form th:action="@{/save}" method="post" th:object="${paciente}">
+    <input type="hidden" name="id" th:field="*{id}">
+    <label for="dni">DNI:</label>
+    <input type="text" name="dni" th:field="*{dni}">
+    <br>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="firstname" th:field="*{firstname}">
+    <br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" name="lastname" th:field="*{lastname}">
+    <br>
+    <label for="dob">Fecha de Nacimiento:</label>
+    <input type="date" name="dob" th:field="*{dob}">
+
+    <br>
+    <label for="obrasocial">Obra Social:</label>
+    <input type="text" name="obrasocial" th:field="*{obrasocial}">
+    <br>
+    <label for="email">Correo electrónico:</label>
+    <input type="email" name="email" th:field="*{email}">
+    <br>
+    <label for="phone">Telefono:</label>
+    <input type="text" name="phone" th:field="*{phone}">
+    <br>
+    <div>
+        <input type="submit" name="save" value="Guardar">
+    </div>
+</form>
+
+</div>
+
+</body>
+
+</body>
+</html>
