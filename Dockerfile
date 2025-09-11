@@ -12,4 +12,4 @@ COPY target/demo-0.0.1-SNAPSHOT.jar /app/demo-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
 
 # Define el comando para ejecutar la aplicación cuando el contenedor inicie
-ENTRYPOINT ["java", "-jar", "/app/demo-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/demo-0.0.1-SNAPSHOT.jar --spring.datasource.url=postgresql://ccristaldo:BuKnJqka7cVlYq5UGFPHxNcxJzBn1e0q@dpg-d3115c56ubrc73bvnqlg-a/proyectounne --spring.datasource.username=ccristaldo --spring.datasource.password=BuKnJqka7cVlYq5UGFPHxNcxJzBn1e0q"]
